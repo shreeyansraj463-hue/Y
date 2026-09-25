@@ -1,568 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Premium, compliant web development studio.">
-  <title>Elevate Web Studio | Premium & Compliant</title>
-
-  <!-- Inter Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    /* --- CSS Variables & Theming --- */
-    :root {
-      --primary: #7C3AED;      /* Elegant Purple */
-      --primary-hover: #6D28D9;
-      --black: #0F172A;        /* Soft Black */
-      --white: #FFFFFF;
-      --text-main: #334155;    /* High contrast dark gray */
-      --text-light: #64748B;
-      --bg-color: #FFFFFF;
-      /* Controlled, soft rainbow for subtle accents */
-      --rainbow-soft: linear-gradient(135deg, rgba(124,58,237,0.3) 0%, rgba(236,72,153,0.3) 50%, rgba(234,179,8,0.3) 100%);
-      --glass-bg: rgba(255, 255, 255, 0.7);
-      --glass-border: rgba(0, 0, 0, 0.05);
-      --shadow-subtle: 0 10px 30px -10px rgba(0,0,0,0.08);
-      --shadow-hover: 0 20px 40px -10px rgba(124, 58, 237, 0.15);
-      --radius: 16px;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* --- Background Effects --- */
-    .dot-grid {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-image: radial-gradient(#E2E8F0 1px, transparent 1px);
-      background-size: 24px 24px;
-      z-index: -2;
-    }
-
-    .radial-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      z-index: -1;
-      opacity: 0.6;
-      pointer-events: none;
-    }
-    .orb-1 {
-      width: 500px; height: 500px;
-      background: rgba(124, 58, 237, 0.15);
-      top: -100px; left: -150px;
-    }
-    .orb-2 {
-      width: 400px; height: 400px;
-      background: rgba(236, 72, 153, 0.1);
-      top: 300px; right: -100px;
-    }
-
-    /* --- Layout & Typography --- */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderSync | AI + Community Travel Planner</title>
     
-    h1, h2, h3 { color: var(--black); font-weight: 700; line-height: 1.2; }
-    h2 { font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
-    .section-desc { text-align: center; color: var(--text-light); margin-bottom: 3rem; max-width: 600px; margin-inline: auto; }
-
-    /* Accessibility Focus */
-    :focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
-
-    /* --- Components --- */
-    .glass-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-subtle);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .glass-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px; border: none;
-      font-weight: 600; font-size: 1rem;
-      cursor: pointer; text-decoration: none;
-      transition: all 0.2s ease;
-      font-family: 'Inter', sans-serif;
-    }
-    .btn-primary { background: var(--black); color: var(--white); }
-    .btn-primary:hover { background: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-hover); }
-    .btn-outline { background: transparent; border: 1px solid var(--black); color: var(--black); }
-    .btn-outline:hover { background: var(--black); color: var(--white); }
-
-    /* --- Navigation --- */
-    nav {
-      padding: 1.5rem 0;
-      display: flex; justify-content: space-between; align-items: center;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(12px);
-      position: sticky; top: 0; z-index: 50;
-      border-bottom: 1px solid var(--glass-border);
-    }
-    .logo { font-size: 1.25rem; font-weight: 700; color: var(--black); display: flex; align-items: center; gap: 0.5rem; cursor: pointer; text-decoration: none;}
-    .logo i { color: var(--primary); }
-
-    /* --- Hero Section --- */
-    .hero { text-align: center; padding: 6rem 0 4rem; }
-    .hero h1 { font-size: 4rem; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
-    .hero p { font-size: 1.25rem; color: var(--text-light); max-width: 600px; margin: 0 auto 2.5rem; }
+    <!-- Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    .animated-arrow { margin-top: 3rem; animation: bounce 2s infinite; color: var(--primary); display: inline-block; }
-    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+    <!-- Icons: Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    /* Terminal */
-    .terminal {
-      margin: 4rem auto 0; max-width: 700px; text-align: left;
-      background: var(--black); color: #E2E8F0;
-      border-radius: var(--radius); overflow: hidden;
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-    }
-    .terminal-header { background: #1E293B; padding: 0.75rem 1rem; display: flex; gap: 0.5rem; }
-    .t-dot { width: 10px; height: 10px; border-radius: 50%; }
-    .t-dot:nth-child(1) { background: #EF4444; }
-    .t-dot:nth-child(2) { background: #EAB308; }
-    .t-dot:nth-child(3) { background: #22C55E; }
-    .terminal-body { padding: 1.5rem; font-family: monospace; font-size: 0.9rem; line-height: 1.8; }
-    .terminal-body span { color: #A78BFA; }
+    <!-- Google Maps & Places API Scaffolding (Replace YOUR_API_KEY) -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places" defer></script> -->
 
-    /* --- Features Section --- */
-    .features { padding: 5rem 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .feature-card { padding: 2.5rem; }
-    .feature-card i { color: var(--primary); margin-bottom: 1rem; }
-    .feature-card h3 { margin-bottom: 1rem; font-size: 1.25rem; }
-    .feature-list { list-style: none; margin-top: 1.5rem; }
-    .feature-list li { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.75rem; font-size: 0.9rem; color: var(--text-main); }
-    .feature-list i { color: var(--primary); width: 16px; height: 16px; margin-top: 3px; flex-shrink: 0; }
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --purple-main: #7e22ce;
+            --purple-light: #f3e8ff;
+            --border-color: #eaeaea;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --rainbow-gradient: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
+        }
 
-    /* --- Bento Grid Section --- */
-    .bento { padding: 5rem 0; display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; gap: 1.5rem; }
-    .bento-item { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; }
-    .bento-large { grid-column: 1 / 2; grid-row: 1 / 3; background: var(--bg-color); }
-    .bento-small-1 { background: var(--black); color: var(--white); }
-    .bento-small-1 h3 { color: var(--white); }
-    .bento-small-2 { background: var(--rainbow-soft); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-    /* --- Pricing Section --- */
-    .pricing { padding: 5rem 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; align-items: start; }
-    .pricing-tier { padding: 2.5rem; position: relative; }
-    .pricing-tier h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .price { font-size: 2.5rem; font-weight: 700; color: var(--black); margin-bottom: 1.5rem; }
-    .price span { font-size: 1rem; color: var(--text-light); font-weight: 400; }
-    .timeline { font-size: 0.875rem; font-weight: 600; color: var(--primary); margin-bottom: 1.5rem; display: block;}
-    
-    .pricing-popular { border: 2px solid transparent; background-clip: padding-box, border-box; background-origin: padding-box, border-box; background-image: linear-gradient(var(--white), var(--white)), var(--rainbow-soft); transform: scale(1.05); box-shadow: var(--shadow-hover); }
-    .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--black); color: var(--white); font-size: 0.75rem; padding: 0.25rem 1rem; border-radius: 20px; font-weight: 600; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            /* Dot Grid Background */
+            background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-    /* --- Form Section --- */
-    .cta-section { padding: 5rem 0; max-width: 600px; margin: 0 auto; text-align: center; }
-    .form-group { text-align: left; margin-bottom: 1.5rem; }
-    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; }
-    .form-control { width: 100%; padding: 0.75rem 1rem; border: 1px solid #CBD5E1; border-radius: 8px; font-family: 'Inter'; font-size: 1rem; transition: border-color 0.2s; }
-    .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1); }
-    .checkbox-group { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.85rem; color: var(--text-light); }
-    .checkbox-group input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--primary); cursor: pointer; }
+        /* Radial Orb Background Effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(126, 34, 206, 0.05) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
 
-    /* --- Footer & Legal Pages --- */
-    footer { padding: 4rem 0 2rem; border-top: 1px solid var(--glass-border); margin-top: 4rem; text-align: center; font-size: 0.875rem; color: var(--text-light); }
-    .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
-    .footer-links a { color: var(--text-main); text-decoration: none; font-weight: 500; cursor: pointer; }
-    .footer-links a:hover { color: var(--primary); text-decoration: underline; }
-    .business-details { margin-bottom: 2rem; line-height: 1.8; }
-    .business-details strong { color: var(--black); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
 
-    /* Legal Pages Viewer */
-    #legal-view { display: none; padding: 4rem 0; min-height: 60vh; }
-    .legal-content { max-width: 800px; margin: 0 auto; }
-    .legal-content h2 { text-align: left; margin-top: 2rem; }
-    .legal-content h3 { margin: 1.5rem 0 0.5rem; }
-    .legal-content p, .legal-content ul { margin-bottom: 1rem; color: var(--text-main); }
-    .legal-content ul { padding-left: 1.5rem; }
-    .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); cursor: pointer; font-weight: 600; margin-bottom: 2rem; }
+        /* Typography */
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+        .text-purple { color: var(--purple-main); }
+        .text-muted { color: var(--text-muted); font-size: 0.9rem; }
 
-    /* --- Cookie Banner --- */
-    .cookie-banner { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 600px; background: var(--white); padding: 1.5rem; border-radius: var(--radius); box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: 1px solid var(--glass-border); z-index: 1000; display: none; flex-direction: column; gap: 1rem; }
-    .cookie-header { font-weight: 700; color: var(--black); display: flex; align-items: center; gap: 0.5rem; }
-    .cookie-text { font-size: 0.875rem; color: var(--text-main); }
-    .cookie-actions { display: flex; justify-content: flex-end; gap: 1rem; }
+        /* Layout & Nav */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
 
-    /* --- Responsive --- */
-    @media (max-width: 900px) {
-      .features, .pricing { grid-template-columns: 1fr; }
-      .bento { grid-template-columns: 1fr; }
-      .bento-large { grid-column: 1 / -1; grid-row: auto; }
-      .hero h1 { font-size: 3rem; }
-      .pricing-popular { transform: none; }
-    }
-  </style>
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem; font-weight: 700; }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--text-main);
+            color: white;
+        }
+        .btn-primary:hover { background: var(--purple-main); transform: translateY(-1px); }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+        }
+        .btn-outline:hover { background: #f9f9f9; }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-inline: auto; }
+
+        .search-box {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.5rem;
+            box-shadow: var(--shadow-soft);
+        }
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 0.8rem;
+            outline: none;
+            font-size: 1rem;
+            background: transparent;
+        }
+
+        /* Bento Grid Layout */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 800px) {
+            .bento-grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.2s ease;
+        }
+        
+        .card:hover { border-color: #ddd; }
+
+        /* AI Gradient Card */
+        .ai-card {
+            position: relative;
+            background: white;
+        }
+        .ai-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--rainbow-gradient);
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+
+        /* Tags & Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .badge-local { background: var(--purple-light); color: var(--purple-main); }
+        .badge-food { background: #fef3c7; color: #d97706; }
+        .badge-place { background: #dbeafe; color: #2563eb; }
+        .badge-tip { background: #fee2e2; color: #dc2626; }
+
+        /* Post & Feed Styles */
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        .user-info { display: flex; align-items: center; gap: 0.8rem; }
+        .avatar { width: 40px; height: 40px; border-radius: 50%; background: #eee; display: flex; align-items: center; justify-content: center;}
+        
+        .reply-item {
+            padding: 1rem 0;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .upvote-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+        .upvote-col:hover { color: var(--purple-main); }
+
+        /* Google Map Placeholder */
+        .map-container {
+            width: 100%;
+            height: 250px;
+            background: #f3f4f6;
+            border-radius: 12px;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Create Post Textarea */
+        .post-input {
+            width: 100%;
+            border: none;
+            resize: none;
+            outline: none;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-family: inherit;
+        }
+
+        /* Checkmark bullets */
+        .check-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer & Legal */
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 1rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background: var(--bg-color);
+        }
+        .legal-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap;}
+        .legal-links a:hover { color: var(--purple-main); text-decoration: underline; }
+
+        /* Cookie Consent Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: white;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-soft);
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            display: none; /* Controlled by JS */
+        }
+        @media (max-width: 600px) {
+            .cookie-banner { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Background Effects -->
-  <div class="dot-grid"></div>
-  <div class="radial-orb orb-1"></div>
-  <div class="radial-orb orb-2"></div>
-
-  <!-- Navigation -->
-  <nav class="container">
-    <a onclick="showHome()" class="logo" aria-label="Elevate Web Studio Home">
-      <i data-lucide="sparkles" aria-hidden="true"></i> Elevate.
-    </a>
-    <a href="#contact" onclick="showHome()" class="btn btn-outline" aria-label="Navigate to contact form">Start My Project</a>
-  </nav>
-
-  <!-- MAIN LANDING PAGE VIEW -->
-  <main id="home-view">
-    
-    <!-- Hero Section -->
-    <header class="hero container">
-      <h1>Build the Web,<br>Beautifully & Compliantly.</h1>
-      <p>A premium development studio focusing on modern design, strict privacy compliance, and exceptional user experiences. No fake claims, just real results.</p>
-      
-      <a href="#contact" class="btn btn-primary" aria-label="Start your web development project">
-        Build My Website <i data-lucide="arrow-right" aria-hidden="true"></i>
-      </a>
-
-      <div>
-        <i data-lucide="arrow-down" class="animated-arrow" size="32" aria-hidden="true"></i>
-      </div>
-
-      <!-- Terminal Mockup -->
-      <div class="terminal" aria-hidden="true">
-        <div class="terminal-header">
-          <div class="t-dot"></div><div class="t-dot"></div><div class="t-dot"></div>
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i data-lucide="compass" class="text-purple"></i>
+                WanderSync
+            </div>
+            <nav style="display: flex; gap: 1rem; align-items: center;">
+                <a href="#" class="text-muted">Feed</a>
+                <a href="#" class="text-muted">Explore Places</a>
+                <button class="btn btn-primary"><i data-lucide="user" size="16"></i> Login</button>
+            </nav>
         </div>
-        <div class="terminal-body">
-          <p>> initialize project --stack html-css-js</p>
-          <p>> apply design-system <span>"minimal-glass"</span></p>
-          <p>> enable compliance <span>"DPDP-Act-India"</span></p>
-          <p style="color: #22C55E; margin-top: 0.5rem;">✓ Build successful. Privacy by default enabled.</p>
-        </div>
-      </div>
     </header>
 
-    <!-- Features Section -->
-    <section class="container" id="features">
-      <h2>Why Choose Elevate?</h2>
-      <p class="section-desc">We combine premium aesthetics with rigorous engineering and legal standards.</p>
-      
-      <div class="features">
-        <div class="feature-card glass-card">
-          <i data-lucide="zap" size="32" aria-hidden="true"></i>
-          <h3>Performance First</h3>
-          <p>We write clean, semantic HTML and vanilla JavaScript to ensure blazing fast load times.</p>
-          <ul class="feature-list">
-            <li><i data-lucide="check-circle-2"></i> 99+ Lighthouse Scores</li>
-            <li><i data-lucide="check-circle-2"></i> Zero framework bloat</li>
-            <li><i data-lucide="check-circle-2"></i> Fully responsive</li>
-          </ul>
-        </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Real Advice. <span class="text-purple">Real-time.</span></h1>
+        <p>Get precise, location-based travel itineraries built instantly by AI, combined with real-time tips from verified locals and Google Maps data.</p>
         
-        <div class="feature-card glass-card">
-          <i data-lucide="shield-check" size="32" aria-hidden="true"></i>
-          <h3>Privacy & Compliant</h3>
-          <p>Built rigorously to align with modern data protection acts including the Indian DPDP Act.</p>
-          <ul class="feature-list">
-            <li><i data-lucide="check-circle-2"></i> Minimal data collection</li>
-            <li><i data-lucide="check-circle-2"></i> Transparent policies</li>
-            <li><i data-lucide="check-circle-2"></i> Secure form handling</li>
-          </ul>
+        <div class="search-box">
+            <i data-lucide="map-pin" class="text-muted" style="margin: 0.8rem;"></i>
+            <!-- Google Places Autocomplete simulation -->
+            <input type="text" id="destination-input" placeholder="Where are you going? (e.g., Manali for 4 days, budget ₹10k)" aria-label="Destination search">
+            <button class="btn btn-primary" onclick="createPost()">Ask Locals</button>
         </div>
-
-        <div class="feature-card glass-card">
-          <i data-lucide="accessibility" size="32" aria-hidden="true"></i>
-          <h3>Accessible by Design</h3>
-          <p>The web is for everyone. We adhere strictly to WCAG guidelines.</p>
-          <ul class="feature-list">
-            <li><i data-lucide="check-circle-2"></i> Screen-reader ready</li>
-            <li><i data-lucide="check-circle-2"></i> High color contrast</li>
-            <li><i data-lucide="check-circle-2"></i> Keyboard navigable</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
-    <!-- Bento Grid Section -->
-    <section class="container">
-      <h2>Platform Capabilities</h2>
-      <p class="section-desc">Everything you need to launch a trustworthy brand online.</p>
-      
-      <div class="bento">
-        <div class="bento-item bento-large glass-card">
-          <i data-lucide="layout-template" size="40" style="color: var(--primary); margin-bottom: 1rem;" aria-hidden="true"></i>
-          <h3>Bespoke UI/UX Design</h3>
-          <p style="margin-top: 1rem; color: var(--text-light);">We don't use templates. Every interface is carefully crafted with soft shadows, precise spacing, and minimal decorations to highlight your core message without overwhelming the user.</p>
-        </div>
-        <div class="bento-item bento-small-1 glass-card">
-          <i data-lucide="globe" size="32" style="margin-bottom: 1rem;" aria-hidden="true"></i>
-          <h3>Global Reach</h3>
-          <p style="color: #94A3B8; font-size: 0.9rem; margin-top: 0.5rem;">Optimized assets served worldwide with zero layout shifts.</p>
-        </div>
-        <div class="bento-item bento-small-2 glass-card">
-          <i data-lucide="fingerprint" size="32" style="color: var(--black); margin-bottom: 1rem;" aria-hidden="true"></i>
-          <h3 style="color: var(--black);">Zero Tracking</h3>
-          <p style="color: var(--black); font-size: 0.9rem; margin-top: 0.5rem;">We build without invasive 3rd-party tracking scripts.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="container" id="pricing">
-      <h2>Transparent Pricing</h2>
-      <p class="section-desc">Clear deliverables. No hidden fees. No fake countdown timers.</p>
-
-      <div class="pricing">
-        <div class="pricing-tier glass-card">
-          <h3>Starter</h3>
-          <div class="price">₹49,000 <span>/project</span></div>
-          <span class="timeline"><i data-lucide="calendar" size="16" style="vertical-align: middle; margin-right: 4px;"></i> 2 Weeks Delivery</span>
-          <ul class="feature-list">
-            <li><i data-lucide="check"></i> Up to 3 Static Pages</li>
-            <li><i data-lucide="check"></i> Custom UI Design</li>
-            <li><i data-lucide="check"></i> Basic SEO Setup</li>
-            <li><i data-lucide="check"></i> Contact Form</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline" style="width: 100%; margin-top: 2rem;">Select Starter</a>
-        </div>
-
-        <div class="pricing-tier glass-card pricing-popular">
-          <div class="popular-badge">Most Popular</div>
-          <h3>Pro</h3>
-          <div class="price">₹99,000 <span>/project</span></div>
-          <span class="timeline"><i data-lucide="calendar" size="16" style="vertical-align: middle; margin-right: 4px;"></i> 4 Weeks Delivery</span>
-          <ul class="feature-list">
-            <li><i data-lucide="check"></i> Up to 8 Pages</li>
-            <li><i data-lucide="check"></i> Advanced Animations</li>
-            <li><i data-lucide="check"></i> CMS Integration</li>
-            <li><i data-lucide="check"></i> Complete Legal Pages setup</li>
-            <li><i data-lucide="check"></i> Priority Support (30 days)</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary" style="width: 100%; margin-top: 2rem;">Select Pro</a>
-        </div>
-
-        <div class="pricing-tier glass-card">
-          <h3>Premium</h3>
-          <div class="price">₹1,80,000 <span>/project</span></div>
-          <span class="timeline"><i data-lucide="calendar" size="16" style="vertical-align: middle; margin-right: 4px;"></i> 6-8 Weeks Delivery</span>
-          <ul class="feature-list">
-            <li><i data-lucide="check"></i> Unlimited Pages (within scope)</li>
-            <li><i data-lucide="check"></i> Full Web App Capabilities</li>
-            <li><i data-lucide="check"></i> Custom Authentication</li>
-            <li><i data-lucide="check"></i> Dedicated Account Manager</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline" style="width: 100%; margin-top: 2rem;">Select Premium</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="container cta-section" id="contact">
-      <h2>Let's Work Together</h2>
-      <p style="color: var(--text-light); margin-bottom: 2rem;">Fill out the form below. We only collect the data necessary to reply to your inquiry.</p>
-      
-      <div class="glass-card" style="padding: 2.5rem;">
-        <form onsubmit="handleFormSubmit(event)">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" class="form-control" required placeholder="Jane Doe" aria-required="true">
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" class="form-control" required placeholder="jane@example.com" aria-required="true">
-          </div>
-          <div class="form-group">
-            <label for="project">Project Details</label>
-            <textarea id="project" class="form-control" rows="4" required placeholder="Tell us about your requirements..." aria-required="true"></textarea>
-          </div>
-          
-          <div class="form-group checkbox-group">
-            <input type="checkbox" id="consent" required aria-required="true">
-            <label for="consent" style="font-weight: 400; margin: 0; line-height: 1.5;">
-              I consent to having Elevate Web Studio store my submitted information strictly to respond to my inquiry, in compliance with the Privacy Policy and DPDP Act.
-            </label>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- LEGAL PAGES VIEW (Hidden by default, toggled via JS) -->
-  <main id="legal-view" class="container">
-    <div class="legal-content glass-card" style="padding: 3rem;">
-      <a onclick="showHome()" class="back-btn"><i data-lucide="arrow-left" size="20"></i> Back to Home</a>
-      
-      <!-- Privacy Policy -->
-      <div id="privacy-policy" style="display: none;">
-        <h2>Privacy Policy</h2>
-        <p><strong>Effective Date:</strong> September 25, 2026</p>
-        <h3>1. Data Collection & Compliance (DPDP Act, India)</h3>
-        <p>In strict compliance with the Digital Personal Data Protection (DPDP) Act of India, Elevate Web Studio collects only strictly necessary personal data required to provide our services. We do not sell, rent, or trade your data.</p>
+    <!-- Main Content Grid -->
+    <main class="container bento-grid">
         
-        <h3>2. What Data We Collect & Why</h3>
-        <ul>
-          <li><strong>Name & Email:</strong> Collected solely via our contact form to communicate regarding your project inquiry.</li>
-          <li><strong>Usage Data:</strong> We do not use third-party analytics trackers. Basic server logs (IP, browser type) are kept temporarily for security purposes only.</li>
-        </ul>
+        <!-- Left Column: Feed & Discussion -->
+        <div class="feed-column">
+            
+            <!-- Live Post Interaction -->
+            <article class="card" style="margin-bottom: 1.5rem;">
+                <div class="post-header">
+                    <div class="user-info">
+                        <div class="avatar"><i data-lucide="user" size="20"></i></div>
+                        <div>
+                            <strong>Rahul Sharma</strong>
+                            <div class="text-muted">Just now • Looking for recommendations</div>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">Going to Manali for 4 days with family. Budget ₹15k. Suggestions?</h3>
+                
+                <!-- Community Replies (Organized) -->
+                <div class="replies-section" id="live-replies">
+                    
+                    <!-- Reply 1 -->
+                    <div class="reply-item">
+                        <div class="upvote-col">
+                            <i data-lucide="chevron-up"></i>
+                            <span style="font-weight: 600;">24</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div style="flex:1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <strong>Aditi Verma <span class="badge badge-local"><i data-lucide="check-circle" size="12"></i> Verified Local</span></strong>
+                                <span class="badge badge-place">📍 Place</span>
+                            </div>
+                            <p>You must visit the Solang Valley for activities, but if you want peace, head over to Sethan Village. It's a hidden gem just 1 hour away from the main mall road.</p>
+                            <button class="btn btn-outline" style="margin-top: 0.8rem; font-size: 0.8rem; padding: 0.3rem 0.6rem;">
+                                <i data-lucide="plus" size="14"></i> Add to My Trip
+                            </button>
+                        </div>
+                    </div>
 
-        <h3>3. User Rights</h3>
-        <p>Under the DPDP Act, you have the right to request access to, correction of, or erasure of your personal data stored by us. Contact us at privacy@elevateweb.in to exercise these rights.</p>
-      </div>
+                    <!-- Reply 2 -->
+                    <div class="reply-item">
+                        <div class="upvote-col">
+                            <i data-lucide="chevron-up"></i>
+                            <span style="font-weight: 600;">18</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div style="flex:1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <strong>Karan S.</strong>
+                                <span class="badge badge-food">🍜 Food</span>
+                            </div>
+                            <p>For food, skip the crowded places and try Johnson's Cafe for Trout Fish. Also, Cafe 1947 by the river is amazing for evening vibes.</p>
+                            <button class="btn btn-outline" style="margin-top: 0.8rem; font-size: 0.8rem; padding: 0.3rem 0.6rem;">
+                                <i data-lucide="plus" size="14"></i> Add to My Trip
+                            </button>
+                        </div>
+                    </div>
 
-      <!-- Terms & Conditions -->
-      <div id="terms-conditions" style="display: none;">
-        <h2>Terms & Conditions</h2>
-        <p><strong>Effective Date:</strong> September 25, 2026</p>
-        <h3>1. Services Rendered</h3>
-        <p>Elevate Web Studio agrees to provide web development services as outlined in the selected pricing tier or custom contract. Timelines provided are estimates and begin upon receipt of all required client assets.</p>
+                    <!-- Reply 3 -->
+                    <div class="reply-item">
+                        <div class="upvote-col">
+                            <i data-lucide="chevron-up"></i>
+                            <span style="font-weight: 600;">32</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div style="flex:1;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <strong>Priya M. <span class="badge badge-local"><i data-lucide="check-circle" size="12"></i> Verified Local</span></strong>
+                                <span class="badge badge-tip">⚠️ Tip / Warning</span>
+                            </div>
+                            <p>Safety Tip: If renting a scooty, strictly avoid the Rohtang pass route unless you are highly experienced. Roads get slippery fast in the afternoon.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Add Comment -->
+                <div style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+                    <input type="text" placeholder="Add a place, food spot, or tip..." style="flex:1; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 8px; outline: none;">
+                    <button class="btn btn-primary">Post</button>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Right Column: AI & Google Integration -->
+        <aside>
+            <!-- AI Summary Card -->
+            <div class="card ai-card" style="margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <i data-lucide="sparkles" class="text-purple"></i>
+                    <h3 class="text-purple">AI Smart Itinerary</h3>
+                </div>
+                <p class="text-muted" style="margin-bottom: 1rem;">Auto-generated 4-Day Plan based on top community replies and local advice.</p>
+                
+                <ul class="check-list">
+                    <li><i data-lucide="check" class="text-purple" size="16"></i> <strong>Day 1:</strong> Arrival & Cafe 1947 (Food)</li>
+                    <li><i data-lucide="check" class="text-purple" size="16"></i> <strong>Day 2:</strong> Solang Valley (Activity)</li>
+                    <li><i data-lucide="check" class="text-purple" size="16"></i> <strong>Day 3:</strong> Sethan Village (Hidden Gem)</li>
+                    <li><i data-lucide="check" class="text-purple" size="16"></i> <strong>Day 4:</strong> Johnson's Cafe & Departure</li>
+                </ul>
+
+                <button class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+                    <i data-lucide="download" size="16"></i> Save Plan
+                </button>
+            </div>
+
+            <!-- Google Maps Integration -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <i data-lucide="map" size="20"></i>
+                    <h3>Map View</h3>
+                </div>
+                <p class="text-muted" style="font-size: 0.85rem;">Powered by Google Maps & Places</p>
+                
+                <div class="map-container" id="map">
+                    <!-- This div serves as the mount point for Google Maps API -->
+                    <div style="text-align: center;">
+                        <i data-lucide="map-pin" size="32" class="text-muted" style="margin-bottom: 0.5rem;"></i>
+                        <p>Google Maps Loading...</p>
+                        <p style="font-size: 0.7rem; margin-top: 0.5rem;">Requires API Key & Consent</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- Cookie & Privacy Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div>
+            <strong>We respect your privacy.</strong>
+            <p class="text-muted" style="margin-top: 0.3rem;">We use minimal cookies for core functionality and to display third-party maps (Google Maps) in compliance with the DPDP Act. We do not sell your data.</p>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+            <button class="btn btn-outline" onclick="handleConsent(false)">Decline Optional</button>
+            <button class="btn btn-primary" onclick="handleConsent(true)">Accept & Continue</button>
+        </div>
+    </div>
+
+    <!-- Footer / Legal Section -->
+    <footer>
+        <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
+            <i data-lucide="compass" class="text-purple"></i> WanderSync
+        </div>
+        <p>WanderSync Free Inc., Kota, Rajasthan, India.</p>
+        <p style="margin-top: 0.5rem;">A 100% free community platform. No hidden fees.</p>
         
-        <h3>2. Intellectual Property</h3>
-        <p>Upon full payment, the client assumes ownership of the final HTML, CSS, JS, and final graphical assets. Elevate retains the right to display the project in our portfolio.</p>
+        <div class="legal-links">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms & Conditions</a>
+            <a href="#cookies">Cookies Policy</a>
+            <a href="#refund">Refund Policy (Free Service)</a>
+        </div>
+    </footer>
 
-        <h3>3. Authenticity & Claims</h3>
-        <p>We do not participate in or endorse the creation of fake testimonials, misleading countdown timers, or dark UX patterns on the sites we build for clients.</p>
-      </div>
+    <!-- Scripts -->
+    <script>
+        // 1. Initialize Lucide Icons
+        lucide.createIcons();
 
-      <!-- Cookies Policy -->
-      <div id="cookies-policy" style="display: none;">
-        <h2>Cookies Policy</h2>
-        <h3>1. Strictly Necessary Cookies</h3>
-        <p>We use local storage/cookies solely to remember your cookie consent preferences (`cookie_consent` key). This is essential for the site to respect your privacy choices.</p>
-        
-        <h3>2. Third-Party Embeds</h3>
-        <p>We block all third-party embeds (like external video players or maps) that may track you until you provide explicit consent via our cookie banner.</p>
-      </div>
+        // 2. Cookie Consent Logic (DPDP Act Compliance minimal tracking approach)
+        document.addEventListener('DOMContentLoaded', () => {
+            const consent = localStorage.getItem('wandersync_consent');
+            if (!consent) {
+                document.getElementById('cookieBanner').style.display = 'flex';
+            } else if (consent === 'true') {
+                loadGoogleMaps(); // Only load third party tracking if consented
+            }
+        });
 
-      <!-- Refund Policy -->
-      <div id="refund-policy" style="display: none;">
-        <h2>Refund Policy</h2>
-        <h3>1. Project Cancellations</h3>
-        <p>If a project is canceled by the client before development begins, a 100% refund of the deposit will be issued within 7-10 business days.</p>
-        
-        <h3>2. Mid-Development</h3>
-        <p>If canceled after work has commenced, refunds are pro-rated based on the hours of work already completed. Final milestone payments are non-refundable once the project is deployed to a live server.</p>
-      </div>
+        function handleConsent(accepted) {
+            localStorage.setItem('wandersync_consent', accepted);
+            document.getElementById('cookieBanner').style.display = 'none';
+            if (accepted) {
+                loadGoogleMaps();
+            }
+        }
 
-    </div>
-  </main>
+        // 3. Mock Google Maps Initialization
+        function loadGoogleMaps() {
+            const mapContainer = document.getElementById('map');
+            // In a real app, you would append the script tag dynamically here
+            // script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`;
+            
+            // Visual simulation for the demo:
+            mapContainer.innerHTML = `
+                <div style="width: 100%; height: 100%; background: #e5e7eb; position: relative; display: flex; align-items: center; justify-content: center;">
+                    <img src="https://maps.googleapis.com/maps/api/staticmap?center=Manali,India&zoom=13&size=400x250&maptype=roadmap&markers=color:red%7Clabel:1%7C32.2396,77.1887&markers=color:blue%7Clabel:2%7C32.3167,77.1500&key=NO_KEY_PROVIDED" 
+                         alt="Map of Manali" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; text-align:center; padding: 1rem;">
+                        <span style="color:#2563eb; font-weight:bold;">Google Map View Active</span><br>
+                        <span style="font-size:0.8rem;">(Static mock shown. Insert API Key in code for interactive map)</span>
+                    </div>
+                </div>
+            `;
+        }
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-links">
-        <a onclick="showLegal('privacy-policy')">Privacy Policy</a>
-        <a onclick="showLegal('terms-conditions')">Terms & Conditions</a>
-        <a onclick="showLegal('cookies-policy')">Cookies Policy</a>
-        <a onclick="showLegal('refund-policy')">Refund Policy</a>
-      </div>
+        // 4. Simulate Real-time incoming posts (Firebase/Supabase mock)
+        function createPost() {
+            const input = document.getElementById('destination-input');
+            if(input.value.trim() === '') {
+                alert("Please enter a destination or query.");
+                return;
+            }
 
-      <div class="business-details">
-        <p><strong>Elevate Web Studio</strong></p>
-        <p>Software Technology Park, Kota, Rajasthan, India 324005</p>
-        <p>Contact: hello@elevateweb.in | +91 98765 43210</p>
-      </div>
+            // Simulate UI transition
+            const btn = document.querySelector('.search-box button');
+            const originalText = btn.innerText;
+            btn.innerHTML = `<i data-lucide="loader" class="spin"></i> Posting...`;
+            
+            setTimeout(() => {
+                alert(`Query posted to live feed: "${input.value}"\nLocals will be notified instantly via real-time database.`);
+                input.value = '';
+                btn.innerText = originalText;
+                lucide.createIcons();
+            }, 800);
+        }
 
-      <p style="font-size: 0.75rem;">
-        &copy; 2026 Elevate Web Studio. All rights reserved. <br>
-        Built with strict adherence to the DPDP Act. Icons by Lucide (Open Source).
-      </p>
-    </div>
-  </footer>
+        // Simulating a real-time new reply pushing to the feed
+        setTimeout(() => {
+            const repliesDiv = document.getElementById('live-replies');
+            const newReply = document.createElement('div');
+            newReply.className = 'reply-item';
+            newReply.style.animation = 'fadeIn 0.5s ease';
+            newReply.innerHTML = `
+                <div class="upvote-col">
+                    <i data-lucide="chevron-up"></i>
+                    <span style="font-weight: 600;">1</span>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+                <div style="flex:1;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <strong>System AI <span class="badge" style="background:#000; color:#fff;">🤖 Bot</span></strong>
+                        <span class="badge badge-place">📍 Auto-Detect</span>
+                    </div>
+                    <p>Based on weather APIs, expect light rain on Day 2. Pack an umbrella!</p>
+                </div>
+            `;
+            repliesDiv.appendChild(newReply);
+            lucide.createIcons();
+        }, 15000); // 15 seconds after page load
 
-  <!-- Cookie Consent Banner -->
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title">
-    <div class="cookie-header" id="cookie-title">
-      <i data-lucide="cookie" size="20" aria-hidden="true"></i> Data & Cookie Consent
-    </div>
-    <div class="cookie-text">
-      We value your privacy. We only use strictly necessary cookies to ensure basic site functionality. We do not use third-party analytics or marketing trackers. Please confirm your preference below.
-    </div>
-    <div class="cookie-actions">
-      <button class="btn btn-outline" onclick="handleCookieConsent('rejected')" aria-label="Reject non-essential cookies">Reject All</button>
-      <button class="btn btn-primary" onclick="handleCookieConsent('accepted')" aria-label="Accept strictly necessary cookies">Accept Necessary</button>
-    </div>
-  </div>
-
-  <!-- JavaScript -->
-  <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
-
-    // --- Routing Logic (Single File Multi-Page simulation) ---
-    const homeView = document.getElementById('home-view');
-    const legalView = document.getElementById('legal-view');
-    const legalSections = ['privacy-policy', 'terms-conditions', 'cookies-policy', 'refund-policy'];
-
-    function showHome() {
-      legalView.style.display = 'none';
-      homeView.style.display = 'block';
-      window.scrollTo(0, 0);
-    }
-
-    function showLegal(sectionId) {
-      homeView.style.display = 'none';
-      legalView.style.display = 'block';
-      
-      // Hide all legal sections, then show the requested one
-      legalSections.forEach(id => {
-        document.getElementById(id).style.display = 'none';
-      });
-      document.getElementById(sectionId).style.display = 'block';
-      window.scrollTo(0, 0);
-    }
-
-    // --- Cookie Consent Logic ---
-    document.addEventListener("DOMContentLoaded", () => {
-      const consent = localStorage.getItem('elevate_cookie_consent');
-      if (!consent) {
-        document.getElementById('cookie-banner').style.display = 'flex';
-      }
-    });
-
-    function handleCookieConsent(status) {
-      // Store consent status purely for UI functional requirement
-      localStorage.setItem('elevate_cookie_consent', status);
-      document.getElementById('cookie-banner').style.display = 'none';
-      
-      // In a real app, if 'rejected', you would programmatically block scripts here.
-      // Since this site inherently uses zero trackers, both options keep the user safe.
-    }
-
-    // --- Form Handling ---
-    function handleFormSubmit(event) {
-      event.preventDefault(); // Prevent page reload
-      
-      const name = document.getElementById('name').value;
-      
-      // Simulate API call / Success message
-      alert(`Thank you, ${name}. Your inquiry has been submitted securely. We respect your data and will be in touch shortly.`);
-      
-      // Reset form
-      event.target.reset();
-    }
-  </script>
-
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .spin {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 
+            100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+        }
+    </style>
 </body>
 </html>
